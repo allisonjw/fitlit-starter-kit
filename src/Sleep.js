@@ -1,8 +1,9 @@
 // const sleepData = require('../data-subsets/sleep-subset');
 
 class Sleep {
-  constructor(userData) {
+  constructor(userData, sleepData) {
     this.userData = userData;
+    this.sleepData = sleepData;
     this.id = userData.id;
     this.name = userData.name;
     this.sleepObjects = this.filterSleepData();

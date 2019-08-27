@@ -16,20 +16,32 @@ class SleepRepository {
     return Math.round(reducedTotalQuality /this.sleepData.length)
   }
 
-  // findSleepQualAboveAverage() {
-  //   let userIds = sleepData.map(user => user.userID);
-  //   let userSet = new Set(userIds);
-  //   let uniqueUsers = new Array(...userSet);
-
-  //   return uniqueUsers.reduce((allIds))
-  // }
+  findSleepQualAboveAverage(givenDate) {
+    let userIds = new Set(sleepData.map(user => user.userID));
+    let individualIds = [...userIds];
+    return individualIds.reduce((acc, userId) => {
+      let indivData = sleepData.filter(user => user.userID === userId);
+      let index = indivData.findIndex(day => day.date === givenDate);
+      let week = indivData.slice(index-6, index+1);
+      let avgQual = week.reduce((acc, day) => {
+        return acc += day.sleepQuality;
+      }, 0) / week.length;
+      if (avgQual >= 3) {
+        acc.push(userId)
+      }
+      return acc;
+    }, [])
+  }
 
   findSleepiestUserPerDay(givenDate) {
     let days = this.sleepData.filter(day => day.date === givenDate);
+    // return days
     let hours = days.sort((a, b) => b.hoursSlept - a.hoursSlept);
     let longestSleeper = hours.filter(day => day.hoursSlept === hours[0].hoursSlept);
     return longestSleeper[0].hoursSlept;
   }
+  
+
 
 }   
 

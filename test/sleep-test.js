@@ -17,7 +17,7 @@ describe('Sleep', () => {
 
   it('should be able to output user\'s average hours slept per day', () => {
     const sleep = new Sleep(userData[0]);
-    expect(sleep.findAvgHoursSlept()).to.equal(8.1);
+    expect(sleep.findAvgHoursSlept()).to.equal(7.8);
   });
 
   it('should be able to retrieve a set of sleep data for a given date', () => {
@@ -41,7 +41,7 @@ describe('Sleep', () => {
 
   it('should be able to output user\'s average sleep quality per day', () => {
     const sleep = new Sleep(userData[0]);
-    expect(sleep.findAvgSleepQual()).to.equal(2.7);
+    expect(sleep.findAvgSleepQual()).to.equal(2.8);
   });
 
   it('should be able to produce sleep data for a week, given the starting day', () => {

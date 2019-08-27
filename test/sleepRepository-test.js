@@ -17,7 +17,7 @@ describe('SleepRepository', () => {
 
   it('should have access to users\' sleep information', () => {
     const sleepRepository = new SleepRepository(1);
-    expect(sleepRepository.sleepData.length).to.equal(130);
+    expect(sleepRepository.sleepData.length).to.equal(140);
   });
 
   it('should be able to calculate the average sleep quality of all users', () => {
@@ -27,14 +27,16 @@ describe('SleepRepository', () => {
 
   it('should be able to show the numbers of users who have above average sleep quality', () => {
     const sleepRepository = new SleepRepository();
-    expect(sleepRepository.findSleepersAboveAverage)
+    expect(sleepRepository.findSleepQualAboveAverage()).to.be.equal(2);
   });
 
   it("should provide the user or users with the most hours of sleep", () => {
     const sleepRepository = new SleepRepository();
-    expect(sleepRepository.findSleepiestUserPerDay("2019/06/16")).to.equal(10.8);
+
+    expect(sleepRepository.findSleepiestUserPerDay("2019/06/16")).to.equal(10.7);
   });
 
+  
 
 
 });
