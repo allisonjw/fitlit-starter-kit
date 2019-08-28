@@ -21,11 +21,29 @@ class Activity {
         return this.activityData.find(user => id === user.userID && date === user.date).minutesActive;
     }
 
+    weeklyAvgStepCount(id, date) {
+        let userActivity = this.activityData.filter(user => id === user.userID);
+        let findIndexOfDates = userActivity.findIndex(index => date === index.date);  
+        let getWeeklyAvgSteps = userActivity.slice(findIndexOfDates, findIndexOfDates + 7)
+        return getWeeklyAvgSteps.reduce((acc, avg) => {
+            return parseFloat((acc + (avg.numSteps / 7)).toFixed(1))
+        }, 0);
+    }
+
+    weeklyAvgStairsClimbed(id, date) {
+        let userActivity = this.activityData.filter(user => id === user.userID);
+        let findIndexOfDates = userActivity.findIndex(index => date === index.date);  
+        let getWeeklyAvgStairs = userActivity.slice(findIndexOfDates, findIndexOfDates + 7)
+        return getWeeklyAvgStairs.reduce((acc, avg) => {
+            return parseFloat((acc + (avg.flightsOfStairs / 7)).toFixed(1))
+        }, 0);
+    }
+
     weeklyAvgMins(id, date) {
         let userActivity = this.activityData.filter(user => id === user.userID);
         let findIndexOfDates = userActivity.findIndex(index => date === index.date);  
-        let getWeeklyAverage = userActivity.slice(findIndexOfDates, findIndexOfDates + 7)
-        return getWeeklyAverage.reduce((acc, avg) => {
+        let getWeeklyAvgMins = userActivity.slice(findIndexOfDates, findIndexOfDates + 7)
+        return getWeeklyAvgMins.reduce((acc, avg) => {
             return parseFloat((acc + (avg.minutesActive / 7)).toFixed(1))
         }, 0);
     }

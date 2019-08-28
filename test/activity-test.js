@@ -35,9 +35,16 @@ describe('Activity', () => {
 
   });
 
+  it('shoud now the user\'s step count average for a given week', () =>{
+    expect(activity.weeklyAvgStepCount(1, '2019/06/15')).to.equal(8375.5);
+  });
+
+  it('shoud now the user\'s stairs climbed average for a given week', () =>{
+    expect(activity.weeklyAvgStairsClimbed(1, '2019/06/15')).to.equal(17.6);
+  });
+
   it('shoud now how many average minutes the user was active for a given week', () =>{
     expect(activity.weeklyAvgMins(1, '2019/06/15')).to.equal(171.2);
-
   });
 
   it('shoud be able know if a user met their step goal for a specified day', () =>{
