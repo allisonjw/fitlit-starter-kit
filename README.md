@@ -1,26 +1,28 @@
-# FitLit Starter Kit
+# FitLit 
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+Project By:
+Allison Wagner [GitHub Account](https://github.com/allisonjw)
+Victor Abraham [GitHub Account](https://github.com/VPAbraham)
 
-## Setup
+Link to the project [GitHub Repo](https://github.com/allisonjw/fitlit-starter-kit)
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+## Description
 
-## Testing
+FitLit is the second project for Module 2 students at Turning School of Software and Design. The goal of this project was to create a data dashboard for an activity tracker based on a multiple provided data bases. We were challenged to present a useful dashboard for a user to view and see their latest activity data, goals and milestones. As well as to compare their activity to other users. The final product should be modular, reusable code that follows SRP(Single Responsibility Principle). All while using object and array protoype methods to perform data manipulation.
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+## Languages and Packages Used
 
-## Linting Your Code
+- HTML
+- CSS
+- TDD with Mocha and Chai
+- jQuery
+- charts.js
+- masonry.js
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
-
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
 
 ## Data Model
+
+Below are examples of the datasets we used for this project.
 
 **Users**
 
@@ -80,3 +82,9 @@ Your linter will look only at the JavaScript files you have within the `src` and
   ...more sleep data
 ]
 ```
+
+GIF of Dashboard
+![demo of dashboard in use]()
+
+Screen Image
+![screen shot of still image]()
