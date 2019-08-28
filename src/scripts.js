@@ -14,8 +14,7 @@ $(function() {
     itemSelector: '.grid-item',
     columnWidth: 700,
     fitWidth: true,
-  });
-
+});
   
   $('#random-user-span').text(user.getFirstName());
   $('#article__user--name').text(user.getFirstName());
@@ -141,6 +140,7 @@ $(function() {
       }
     }
   });
+<<<<<<< HEAD
     
   var dailyStepComparisonChart = new Chart($('#compare-user-steps-chart'), {
     type: 'doughnut',
@@ -175,6 +175,76 @@ $(function() {
           bottom: 10,
         }
        
+=======
+  
+      const allTimeAvgSleepChart = new Chart($('#alltime-average-sleep-chart'), {
+        type: 'pie',
+        data: {
+          labels: ['Average Sleep Quality', 'Average Hours of Sleep'],
+          datasets: [{
+            label: 'All-time Averages of Sleep',
+            data: [8, 4.5],
+            // [sleep.(), sleep.()]''
+            backgroundColor: [
+              '#B6E7EC',
+              '#FC5D79', 
+            ],
+            borderColor: [
+              '#B6E7EC', 
+              '#FC5D79',
+            ],
+            borderWidth: 2 
+          }]
+        },
+        options: {
+            title: {
+                display: true,
+                fontColor: 'black',
+                text: 'All-time Sleep Averages'
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10,
+                        }
+                    },
+            }                
+      }); 
+    const dailyStepComparisonChart = new Chart($('#compare-user-steps-chart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Your Steps', 'All Users Steps'],
+          datasets: [{
+            label: 'Daily Step Comparison',
+            data: [activityData[randomUser].numSteps, activityRepository.avgStepsTaken('2019/06/15')
+            ],
+            backgroundColor: [
+              '#73A9BB',
+              '#FC5D79', 
+            ],
+            borderColor: [
+              '#73A9BB', 
+              '#FC5D79',
+            ],
+            borderWidth: 2 
+          }]
+        },
+        options: {
+            title: {
+                display: true,
+                fontColor: 'black',
+                text: 'Daily Step Comparison'
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10,
+                        }       
+>>>>>>> 7fef628a00c5d925b1dda77db4fcf19df67a5a94
       },
     }                
   });
@@ -211,10 +281,10 @@ $(function() {
           top: 10,
           bottom: 10,
         }
-       
       },
     }                
   });
+
 
   var dailyStairsComparisonChart = new Chart($('#compare-user-stairs-chart'), {
     type: 'pie',
@@ -251,10 +321,4 @@ $(function() {
       },
     }                
   });
-    
-   
-  
-    
-    
-
 });
