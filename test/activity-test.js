@@ -1,6 +1,5 @@
 const chai = require('chai');
 const expect = chai.expect;
-
 // const User = require('../src/User');
 const Activity = require('../src/Activity');
 const userData = require('../data-subsets/users-subset')

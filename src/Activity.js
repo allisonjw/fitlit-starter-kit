@@ -59,7 +59,6 @@ class Activity {
   
   gatherFriends(givenDate, id) {
     let allFriends = [...userData[id].friends];
-    return allFriends
     let userFriends = allFriends.map(friend => ({
       id: friend,
       name: userData.find(user => user.id === friend).name,

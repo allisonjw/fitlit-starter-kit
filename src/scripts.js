@@ -141,7 +141,6 @@ $(function() {
       }
     }
   });
-
     
   var dailyStepComparisonChart = new Chart($('#compare-user-steps-chart'), {
     type: 'doughnut',
