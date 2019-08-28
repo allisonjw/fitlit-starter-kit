@@ -33,7 +33,9 @@ $('.grid').masonry({
     $('#article__user--todaysteps').text(activityData[randomUser].numSteps);
     $('#article__user--activemins').text(activity.minsUserActive(randomUser, '2019/06/15'));
     $('#article__user--todaydistance').text(activity.milesUserWalked(randomUser, '2019/06/15', userData));
-    $('#article__user--weeklyview').text(activity.weeklyAvgMins(randomUser, '2019/06/15'));
+    $('#article__user--weekly-avg-steps').text(activity.weeklyAvgStepCount(randomUser, '2019/06/15'));
+    $('#article__user--weekly-avg-stairs').text(activity.weeklyAvgStairsClimbed(randomUser, '2019/06/15'));
+    $('#article__user--weekly-avg-mins').text(activity.weeklyAvgMins(randomUser, '2019/06/15'));
     $('#article__user--comparesteps').text(activityRepository.avgStepsClimbed('2019/06/15'));
     $('#article__user--comparemins').text(activityRepository.avgStepsTaken('2019/06/15'));
     $('#article__user--comparestairs').text(activityRepository.avgMinutesActive('2019/06/15'));
