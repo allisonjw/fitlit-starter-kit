@@ -199,7 +199,7 @@ const hydrationData = [
     "date": "2019/06/18",
     "numOunces": 97
   },
-   {
+  {
     "userID": 1,
     "date": "2019/06/19",
     "numOunces": 91

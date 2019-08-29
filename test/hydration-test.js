@@ -28,7 +28,6 @@ describe('Hydration', () => {
     expect(hydration.findAvgWaterCons()).to.be.equal(56)
   });
 
-  
   it('should be able to get fluid ounces consumed for specific day', () => {
     const hydration = new Hydration(userData[0]);
     expect(hydration.findWaterByDate('2019/06/21')).to.be.equal(50);
@@ -38,4 +37,5 @@ describe('Hydration', () => {
     const hydration = new Hydration(userData[0]);
     expect(hydration.findWeeklyWaterCons()).to.deep.equal([ 43, 39, 61, 51, 52, 29, 57 ]);
   });
+
 });    

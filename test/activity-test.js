@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-// const User = require('../src/User');
 const Activity = require('../src/Activity');
 const userData = require('../data-subsets/users-subset')
 const activityData = require('../data-subsets/activity-subset');
@@ -32,7 +31,6 @@ describe('Activity', () => {
 
   it('shoud be know how minutes a user was active for a specific day', () =>{
     expect(activity.minsUserActive(1, '2019/06/15')).to.equal(140);
-
   });
 
   it('shoud now the user\'s step count average for a given week', () =>{
@@ -66,4 +64,5 @@ describe('Activity', () => {
   it('should show when the user had increasing steps for 3 or more days', () => {
     expect(activity.daysIncreasedSteps(1)).to.deep.equal(['2019/06/17', '2019/06/20', '2019/06/23']);
   });
+  
 });  

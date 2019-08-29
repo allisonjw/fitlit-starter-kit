@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const UserRepository = require('../src/userRepository');
 const User = require('../src/User');
 const userData = require('../data-subsets/users-subset');
 

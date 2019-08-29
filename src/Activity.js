@@ -1,5 +1,5 @@
-if (typeof module !== 'undefined') {	
-  userData = require('../data-subsets/users-subset');	
+if (typeof module !== 'undefined') {  
+  userData = require('../data-subsets/users-subset');
 }
 
 class Activity {
@@ -95,8 +95,8 @@ class Activity {
           return acc
         }, []);
     }
-}
 
+}
 
 if (typeof module !== 'undefined') {
     module.exports = Activity;

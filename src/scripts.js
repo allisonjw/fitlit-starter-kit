@@ -1,6 +1,6 @@
 $(function() {
 
-const randomUser = Math.floor(Math.random() * 50) +1 
+const randomUser = Math.floor(Math.random() * 50) + 1 
 const userRepository = new UserRepository(userData);
 const hydration = new Hydration(userData[randomUser]);
 const user = new User(userData[randomUser]);
@@ -197,41 +197,29 @@ $('.grid').masonry({
       });
 
       const dailyMinsComparisonChart = new Chart($('#compare-minutes-active-chart'), {
-        type:  'polarArea',
+        type: 'bar',
         data: {
-          labels: ['Your Minutes Active', 'All User\'s Minutes Active'],
-          datasets: [{
-            label: ['Your Minutes Active', 'All User\'s Minutes Active'],
-            data: [activityData[randomUser].minutesActive, activityRepository.avgMinutesActive('2019/06/15')
-            ],
-            backgroundColor: [
-              '#73A9BB',
-              '#FC5D79', 
-            ],
-            borderColor: [
-              '#73A9BB', 
-              '#FC5D79',
-            ],
-            borderWidth: 2 
-          }]
-        },
-        options: {
-            title: {
-                display: true,
-                fontColor: 'black',
-                text: 'Daily Minutes Active Comparison'
+            labels: ['You', 'Global Average'],
+            datasets: [{
+                label: 'Your Minutes Active',
+                data: [activityData[randomUser].minutesActive, activityRepository.avgMinutesActive('2019/06/15')],
+                backgroundColor: [
+                    '#73A9BB',
+                    '#FC5D79'
+                ],
+                borderWidth: 1
+              }]
             },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
                         }
-       
-                    },
-            }                
-      });
+                    }]
+                }
+            }
+        });
 
       const dailyStairsComparisonChart = new Chart($('#compare-user-stairs-chart'), {
         type: 'pie',
