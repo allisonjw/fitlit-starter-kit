@@ -63,17 +63,7 @@ describe('Activity', () => {
     expect(activity.giveUserStepsFeedback(1, '2019/06/15', userData)).to.equal('Almost there! You have 6423 steps until you have met your step goal.');
   });
 
-  it('shoud test my methods', () =>{
-    expect(activity.gatherFriends('2019/06/15', 1)).to.equal(36);
+  it('should show when the user had increasing steps for 3 or more days', () => {
+    expect(activity.daysIncreasedSteps(1)).to.deep.equal(['2019/06/17', '2019/06/20', '2019/06/23']);
   });
-
-
-  it('should should compare user\'s steps against their friends', () => {
-    expect(activity.compareFriends("2019/06/15", 1)).to.equal({
-      id: 5,
-      name: "Erick Schaden",
-      steps: 11374
-    });
-  });
-
 });  
