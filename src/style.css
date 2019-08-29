@@ -86,17 +86,6 @@ img {
     transition-duration: 1s;
 }
 
-img:hover {
-    height: 227px;
-    width: 227px;
-    -webkit-transition-property: height, width;
-    -webkit-transition-duration: 1s;
-    -moz-transition-property: height, width;
-    -moz-transition-duration: 1s;
-    transition-property: height, width;
-    transition-duration: 1s;
-}
-
 article {
     position: relative;
     transition: transform 1s;

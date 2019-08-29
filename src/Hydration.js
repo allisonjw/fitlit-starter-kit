@@ -1,6 +1,7 @@
 if (typeof module !== "undefined") {
   hydrationData = require('../data-subsets/hydration-subset');
 }
+
 class Hydration {
   constructor(userData) {
     this.userData = userData;
@@ -33,6 +34,7 @@ class Hydration {
   findWeeklyWaterCons() {
     return this.ouncesPerDay.slice((-7));
   }
+
 }
 
 if (typeof module !== 'undefined') {

@@ -1,5 +1,5 @@
 if (typeof module !== "undefined") {
-sleepData = require('../data-subsets/sleep-subset');
+  sleepData = require('../data-subsets/sleep-subset');
 }
 
 class Sleep {
@@ -32,7 +32,6 @@ class Sleep {
     return Number(sleepHours.toFixed(1));
   }
 
-  // For a user, their average sleep quality per day over all time
   findAvgSleepQual() {
     let totSleepQual = this.sleepQualityDay.reduce((qual, day) => {
       qual += day;
@@ -74,8 +73,6 @@ class Sleep {
   }
 
 }
-  
-
 
 if (typeof module !== 'undefined') {
   module.exports = Sleep;

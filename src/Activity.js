@@ -1,5 +1,5 @@
-if (typeof module !== 'undefined') {	
-  userData = require('../data-subsets/users-subset');	
+if (typeof module !== 'undefined') {  
+  userData = require('../data-subsets/users-subset');
 }
 
 class Activity {
@@ -83,21 +83,20 @@ class Activity {
         }
     }
 
-    gatherFriends(givenDate, id) {
-      let allFriends = [...userData[id].friends];
-      return allFriends
-      let userFriends = allFriends.map(friend => ({
-        id: friend,
-        name: userData.find(user => user.id === friend).name,
-        steps: this.activityData.filter(day => day.userID === userFriends && day.date <= givenDate)
-          .map(user => user.numSteps) 
-      }));
-      return userFriends.amp(friend => {
-        return friend.name;
+    gatherFriends(idNum) {
+      let userObj = userData.find(user => {
+        return user.id === idNum
       });
+      return userObj.friends;
     }
-}
 
+    friendsWeeklyStepCount(givenDate, idNum) {
+      let friendIds = this.gatherFriends(idNum);
+      
+      return globalActivityData[0];
+    }
+
+}
 
 if (typeof module !== 'undefined') {
     module.exports = Activity;

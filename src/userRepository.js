@@ -15,6 +15,7 @@ class UserRepository {
     }, 0) / this.users.length;
     return stepGoalSum;
   }
+  
 }
 
 if (typeof module !== "undefined") {

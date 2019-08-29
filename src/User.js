@@ -10,15 +10,13 @@ class User {
     this.dailyStepGoal = userData.dailyStepGoal;
     this.friends = userData.friends;
   }
+  
   getFirstName() {
     let firstName = this.name.split(' ')[0];
     return firstName;
   }
+
 }
-
-
-
-
 
 if (typeof module !== 'undefined') {
   module.exports = User;
