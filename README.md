@@ -83,8 +83,7 @@ Below are examples of the datasets we used for this project.
 ]
 ```
 
-GIF of Dashboard
-![demo of dashboard in use]()
 
 Screen Image
-![screen shot of still image]()
+![FitLit Site Screen](https://user-images.githubusercontent.com/30779453/63912684-f1563600-c9ea-11e9-91a8-46cdbfb232ba.png)
+
