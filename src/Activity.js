@@ -32,7 +32,7 @@ class Activity {
 
     weeklyAvgStairsClimbed(id, date) {
         let userActivity = this.activityData.filter(user => id === user.userID);
-        let findIndexOfDates = userActivity.findIndex(index => date === index.date);  
+        let findIndexOfDates = userActivity.findIndex(index => date === index.date); 
         let getWeeklyAvgStairs = userActivity.slice(findIndexOfDates, findIndexOfDates + 7)
         return getWeeklyAvgStairs.reduce((acc, avg) => {
             return parseFloat((acc + (avg.flightsOfStairs / 7)).toFixed(1))
@@ -83,18 +83,17 @@ class Activity {
         }
     }
 
-    gatherFriends(givenDate, id) {
-      let allFriends = [...userData[id].friends];
-      return allFriends
-      let userFriends = allFriends.map(friend => ({
-        id: friend,
-        name: userData.find(user => user.id === friend).name,
-        steps: this.activityData.filter(day => day.userID === userFriends && day.date <= givenDate)
-          .map(user => user.numSteps) 
-      }));
-      return userFriends.amp(friend => {
-        return friend.name;
-      });
+    daysIncreasedSteps(id) {
+        let userActivity = this.activityData.filter(user => id === user.userID)
+        return userActivity.reduce((acc, day, index) => {
+          if (index < 2) {
+            return acc
+          }
+          if (day.numSteps > userActivity[index - 1].numSteps && userActivity[index - 1].numSteps > userActivity[index - 2].numSteps) {
+            acc.push(day.date)
+          }
+          return acc
+        }, []);
     }
 }
 
