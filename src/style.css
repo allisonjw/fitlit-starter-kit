@@ -133,3 +133,27 @@ h5 {
     font-size: 1em;
     padding: 5px;
 }
+
+.user--trends {
+    font-size: 1em;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.user-steps {
+    color: #B6E7EC;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+/* #compare-user-steps-chart {
+    height: 300px;
+    width: 300px;
+} */
+
+canvas{
+    width: 450px !important;
+    height: 450px !important;
+    margin: auto;
+  }

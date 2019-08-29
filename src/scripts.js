@@ -38,8 +38,19 @@ $('.grid').masonry({
     $('#article__user--comparemins').text(activityRepository.avgStepsTaken('2019/06/15'));
     $('#article__user--comparestairs').text(activityRepository.avgMinutesActive('2019/06/15'));
     $('#artice__user--step-goal-reminder').text(activity.giveUserStepsFeedback(randomUser, '2019/06/15', userData));
+    $('#article__user--trends').html(`${insertStepTrend()}`);
     
-
+  function insertStepTrend() {
+    let listItem =  `<ul class="user--trends">`;
+    let stepTrend = activity.daysIncreasedSteps(randomUser);
+    listItem += `<li class="challenges__li">
+        <span class="user-steps">${stepTrend[0]}</span>
+        <span class="user-steps">${stepTrend[1]}</span>
+        <span class="user-steps">${stepTrend[2]}</span>
+      </li>`;
+    listItem += "</ul>";
+    return listItem;
+  }
 
     const weeklyWaterIntake = new Chart($('#weekly-hydration-chart'), {
       type: 'bar',
